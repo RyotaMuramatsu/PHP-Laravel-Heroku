@@ -26,7 +26,6 @@
         {{-- プロフィールCSSを読み込みます --}}
         <link href="{{ secure_asset('css/profile.css') }}" rel="stylesheet">
     
-    
     </head>
     <body>
         <div id="app">

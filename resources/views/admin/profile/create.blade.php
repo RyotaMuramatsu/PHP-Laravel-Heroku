@@ -9,8 +9,14 @@
             <div class="col-md-8 mx-auto">
                 <h2>Myプロフィール</h2>
                 <form action="{{ action('Admin\NewsController@create') }}" method="post" enctype="multipart/form-data">
+                </form>    
+           </div>
+        </div>
+    </div>
                     
-                    
+@endsection
+
+
 <!--<!DOCTYPE html>-->
 <!--<html>-->
     <!--<head>-->

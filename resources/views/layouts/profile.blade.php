@@ -25,8 +25,9 @@
         <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
         {{-- プロフィールCSSを読み込みます --}}
         <link href="{{ secure_asset('css/profile.css') }}" rel="stylesheet">
-    </head>
     
+    
+    </head>
     <body>
         <div id="app">
             {{-- 画面上部に表示するナビゲーションバーです。 --}}
@@ -42,7 +43,6 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
-
                         </ul>
 
                         <!-- Right Side Of Navbar -->
@@ -54,9 +54,10 @@
             {{-- ここまでナビゲーションバー --}}
 
             <main class="py-4">
-                {{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}
+                <!--{{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}-->
                 @yield('content')
             </main>
+            
         </div>
     </body>
 </html>

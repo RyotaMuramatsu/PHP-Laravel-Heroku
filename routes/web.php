@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'auth'], function() {
 // GETで/admin/profile/edit　→　ProfileController＠edit →　'admin.profile.edit'ビュー
     Route::get('profile/add','Admin\ProfileController@add');
     Route::get('profile/edit','Admin\ProfileController@edit');
+    Route::get('profile/create','Admin\ProfileController@create');
     
 });
 

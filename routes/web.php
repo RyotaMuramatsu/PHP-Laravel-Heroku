@@ -15,41 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('news/create','Admin\NewsController@add');
-    Route::get('profile/create','Admin\ProfileController@create');
+Route::group(['prefix' => 'admin' , 'middleware' => 'auth'], function() {
+    Route::get('news/create','Admin\NewsController@add')->middleware('auth');
+    Route::post('news/create','Admin\NewsController@create');
+    
+// GETで/admin/profile/add　→　ProfileController＠add　→　'admin.profile.create'ビュー
+// GETで/admin/profile/edit　→　ProfileController＠edit →　'admin.profile.edit'ビュー
+    Route::get('profile/add','Admin\ProfileController@add');
     Route::get('profile/edit','Admin\ProfileController@edit');
     
 });
 
-// 課題１
-// A:Routing
+Auth::routes();
 
-// 課題２
-// A:サイトの機能を後々拡張などした時に汎用性が高くなる。
-//   ルーティングをコーディングをする際にコードを簡略化できる
-
-// 課題３
-// Q:「http://XXXXXX.jp/XXX というアクセスが来たときに、
-//   AAAControllerのbbbというAction に渡すRoutingの設定」
-//   を書いてみてください。
-// 
-// A: Route::get('XXX','AAAController@bbb');
-
-//【応用】 
-// Q:
-// 前章でAdmin/ProfileControllerを作成し、
-// add Action, edit Actionを追加しました。
-// web.phpを編集して、admin/profile/create にアクセスしたら 
-// ProfileController の add Action に、
-// admin/profile/edit にアクセスしたら ProfileController 
-// の edit Action に割り当てるように設定してください。
-
-// A:
-// Route::group(['prefix' => 'admin'], function() {
-    // Route::get('profile/create','Admin\ProfileControllerr@add');
-    // Route::get('profile/edit','Admin\ProfileControllerr@edit');
-// });
-
-
-
+Route::get('/home', 'HomeController@index')->name('home');

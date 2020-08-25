@@ -47,7 +47,7 @@
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto">
                         <!--ログインボタンの表示    -->
-                            @guest
+                        @guest
                             <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                         
                         <!--ログインしていたらユーザー名とログアウトボタンを表示　　-->
@@ -69,18 +69,17 @@
                                     </form>
                                 </div>
                             </li>
-                            @endguest
+                        @endguest
                         </ul>
                     </div>
                 </div>
             </nav>
             {{-- ここまでナビゲーションバー --}}
-
+            
             <main class="py-4">
                 <!--{{-- コンテンツをここに入れるため、@yieldで空けておきます。 --}}-->
                 @yield('content')
             </main>
-            
         </div>
     </body>
 </html>

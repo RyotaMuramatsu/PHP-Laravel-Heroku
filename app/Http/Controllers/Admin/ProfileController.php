@@ -25,6 +25,11 @@ class ProfileController extends Controller
         return view('admin.profile.create');
     }
     
+    public function update()
+    {
+        return view('admin.profile.edit');
+    }
+    
     
     // public function update()
     // {

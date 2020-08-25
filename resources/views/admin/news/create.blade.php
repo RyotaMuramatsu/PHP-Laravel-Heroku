@@ -8,8 +8,7 @@
                 <h2>ニュース新規作成</h2>
                 <form action="{{ action('Admin\NewsController@create') }}" method="post" enctype="multipart/form-data">
 
- // 以下を追記
-
+ <!--以下から追記-->
                     @if (count($errors) > 0)
                         <ul>
                             @foreach($errors->all() as $e)
@@ -17,6 +16,7 @@
                             @endforeach
                         </ul>
                     @endif
+                    
                     <div class="form-group row">
                         <label class="col-md-2" for="title">タイトル</label>
                         <div class="col-md-10">
@@ -41,4 +41,4 @@
             </div>
         </div>
     </div>
-@endsections
+@endsection
